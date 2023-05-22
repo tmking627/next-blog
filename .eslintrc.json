@@ -1,3 +1,20 @@
 {
-  "extends": "next/core-web-vitals"
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "project": "./tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": ["unused-imports"],
+  "extends": ["next/core-web-vitals", "prettier"],
+  "rules":{
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+    ]
+  }
 }
